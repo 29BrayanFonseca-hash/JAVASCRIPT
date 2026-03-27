@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>📋 Gestor de Tareas</h1>
+   
+    <div class="formulario">
+      <input type="text" id="nueva-tarea" placeholder="Escribe una nueva tarea..." />
+      <button id="agregar-btn">Agregar</button>
+    </div>
+
+
+    <p id="mensaje-error" class="error oculto">⚠️ Tarea inválida o duplicada.</p>
+
+
+    <ul id="lista-tareas"></ul>
+
+
+    <div id="resumen">
+      <span>Total: <strong id="total">0</strong></span>
+      <span>Completadas: <strong id="completadas">0</strong></span>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

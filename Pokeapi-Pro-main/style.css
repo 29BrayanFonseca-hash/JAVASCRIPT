@@ -1,0 +1,162 @@
+/* 1. Importación de Google Fonts desde el CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Press+Start+2P&display=swap');
+
+:root {
+  --primary: #d32f2f;
+  --dark: #212121;
+  --accent: #ffcc00;
+  --fire: #ff9d55; --water: #5090f1; --grass: #63bc5a; --electric: #f4d23c;
+  --ice: #73cebf; --fighting: #ce4069; --poison: #ab6ac8; --ground: #d97746;
+  --flying: #8fa8dd; --psychic: #fa7179; --bug: #91c12f; --rock: #c5b679;
+  --ghost: #5269ad; --dragon: #0b6dc3; --dark-type: #5a5366; --steel: #5a8ea1;
+  --fairy: #ec8fe6; --normal: #949ba2;
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);  background: #121212;
+  color: white;
+}
+
+header {
+  /* Usamos un degradado lineal suave */
+  background: linear-gradient(180deg, rgba(183, 28, 28, 0.9) 0%, rgba(33, 33, 33, 0.8) 100%);
+  
+  /* Efecto de desenfoque de fondo (Glassmorphism) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  padding: 1.5rem;
+  text-align: center;
+  position: sticky; /* Se queda fijo al hacer scroll */
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  background: linear-gradient(#fff, #ccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-container input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: calc(100vh - 130px);
+}
+
+/* Panel Izquierdo: Detalles */
+#details {
+  background: var(--dark);
+  padding: 2rem;
+  overflow-y: auto;
+  border-right: 5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.pokemon-image { width: 80%; max-width: 300px; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); }
+
+/* Tags de tipos */
+.types { display: flex; gap: 8px; margin: 15px 0; }
+.type-badge {
+  padding: 5px 15px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Stats */
+.stats-container { width: 100%; margin-top: 20px; }
+.stat-row { margin-bottom: 12px; }
+.stat-bar-bg { background: #444; height: 10px; border-radius: 5px; overflow: hidden; }
+.stat-bar-fill { height: 100%; transition: width 0.5s ease-out; }
+
+/* Panel Derecho: Cards */
+#cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.card {
+  background: #2c2c2c;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+}
+.card h3 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  background: #383838;
+}
+
+/* Responsividad */
+@media (max-width: 850px) {
+  .main-container { grid-template-columns: 1fr; height: auto; }
+  #details { height: auto; border-right: none; border-bottom: 5px solid var(--accent); }
+}
+
+/* Media Query para pantallas de móviles (menos de 600px) */
+@media (max-width: 600px) {
+  /* Ocultamos la imagen dentro de la card */
+  .card img {
+    display: none;
+  }
+
+  /* Ajustamos el padding de la card para que sea más compacta */
+  .card {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+  }
+
+  /* Reducimos el tamaño del texto para que quepan más nombres */
+  .card h3 {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* Opcional: hacemos que el contenedor de cards tenga más columnas en móvil */
+  #cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,135 @@
+/* -------------------------
+ESTILOS GENERALES DEL BODY
+-------------------------- */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Fuente principal del sitio */
+  background: #f0f2f5; /* Color de fondo gris claro */
+  padding: 40px; /* Espacio interno alrededor del contenido */
+  margin: 0; /* Elimina margen por defecto del navegador */
+}
+/* -------------------------
+CONTENEDOR PRINCIPAL
+-------------------------- */
+#app {
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: auto; /* Centra horizontalmente */
+  background: #ffffff; /* Fondo blanco */
+  padding: 25px; /* Espacio interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+/* -------------------------
+TÍTULO
+-------------------------- */
+h1 {
+  text-align: center; /* Centrar texto */
+  color: #333; /* Color gris oscuro */
+}
+/* -------------------------
+CONTENEDOR DEL FORMULARIO
+-------------------------- */
+.formulario {
+  display: flex; /* Activa Flexbox */
+  gap: 10px; /* Espacio entre elementos */
+  margin-bottom: 15px; /* Separación inferior */
+}
+/* -------------------------
+INPUT DE NUEVA TAREA
+-------------------------- */
+#nueva-tarea {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  padding: 10px; /* Espacio interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 6px; /* Bordes redondeados */
+}
+/* -------------------------
+BOTÓN AGREGAR
+-------------------------- */
+#agregar-btn {
+  padding: 10px 16px; /* Espacio interno */
+  background-color: #4caf50; /* Verde */
+  border: none; /* Sin borde */
+  color: white; /* Texto blanco */
+  border-radius: 6px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a mano */
+  transition: background 0.3s; /* Animación suave al cambiar fondo */
+}
+/* Efecto hover (cuando el mouse pasa encima) */
+#agregar-btn:hover {
+  background-color: #45a045; /* Verde más oscuro */
+}
+/* -------------------------
+MENSAJES DE ERROR
+-------------------------- */
+#error, .error {
+  color: #c0392b; /* Rojo */
+  font-size: 0.9em; /* Tamaño ligeramente más pequeño */
+}
+/* Clase para ocultar elementos */
+.oculto {
+  display: none; /* No se muestra en pantalla */
+}
+/* -------------------------
+LISTA DE TAREAS
+-------------------------- */
+#lista-tareas {
+  list-style: none; /* Quita viñetas */
+  padding: 0; /* Elimina espacio interno */
+}
+/* -------------------------ESTILO DE CADA TAREA
+-------------------------- */
+.tarea {
+  display: flex; /* Flexbox para ordenar contenido */
+  justify-content: space-between; /* Separar texto y botones */
+  align-items: center; /* Alinear verticalmente */
+  background: #f7f7f7; /* Fondo gris muy claro */
+  border: 1px solid #ddd; /* Borde gris */
+  padding: 12px; /* Espacio interno */
+  margin-bottom: 8px; /* Separación entre tareas */
+  border-radius: 6px; /* Bordes redondeados */
+  transition: background 0.3s ease; /* Animación suave */
+}
+/* -------------------------TAREA COMPLETADA
+-------------------------- */
+.tarea.completada {
+  background: #d4edda; /* Verde claro */
+  text-decoration: line-through; /* Texto tachado */
+  color: #333; /* Color gris oscuro */
+}
+/* -------------------------
+CONTENEDOR DE BOTONES
+-------------------------- */
+.botones {
+  display: flex; /* Flexbox */
+  gap: 8px; /* Espacio entre botones */
+}
+/* -------------------------
+ESTILO BASE DE BOTONES
+-------------------------- */
+.btn {
+  padding: 6px 10px; /* Espacio interno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
+  font-size: 0.9em; /* Tamaño pequeño */
+}
+/* Botón completar */
+.btn-completar {
+  background-color: #3498db; /* Azul */
+  color: white; /* Texto blanco */
+}
+/* Botón eliminar */
+.btn-eliminar {
+  background-color: #e74c3c; /* Rojo */
+  color: white; /* Texto blanco */
+}
+/* -------------------------
+RESUMEN (CONTADORES)
+-------------------------- */
+#resumen {
+  display: flex; /* Flexbox */
+  justify-content: space-between; /* Separar elementos */
+  margin-top: 15px; /* Espacio superior */
+  font-size: 1em; /* Tamaño normal */
+  color: #444; /* Gris oscuro */
+}

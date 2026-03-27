@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .controles {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #0052a3;
+  }
+  
+  button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+  }
+  
+  #estado {
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  
+  
+  .tarjeta {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  
+  .tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  
+  .tarjeta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .info {
+    padding: 1.2rem;
+  }
+  
+  .info h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.25rem;
+  }
+  
+  .stock-si { color: #006600; font-weight: 600; }
+  .stock-no  { color: #c40000; font-weight: 600; }
+  
+  .mensaje-error {
+    background: #ffebee;
+    color: #c62828;
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  .grid-estudiantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .tarjeta {
+    /* mismo estilo */
+  }
+  
+  .tarjeta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 4px solid #0066cc;
+  }
+  
+  .info {
+    padding: 1.2rem;
+  }
+  
+  .info h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.25rem;
+    color: #1a1a1a;
+  }
+  
+  .promedio {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.4rem 0;
+  }
+  
+  .promedio-alto  { color: #006600; }
+  .promedio-medio { color: #e67e22; }
+  .promedio-bajo  { color: #c62828; }
+  
+  .carrera {
+    color: #444;
+    font-weight: 500;
+    margin: 0.6rem 0;
+  }
+  
+  .ciudad {
+    color: #666;
+    font-size: 0.95rem;
+  }

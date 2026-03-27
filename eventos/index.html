@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Eventos Estilizados</title>
+</head>
+<body>
+
+
+<h1>Demostración Visual de Eventos</h1>
+<div class="toast-container" id="toastContainer"></div>
+
+
+<div class="container">
+
+
+  <!-- Mouse Events -->
+  <div class="event-box" onmouseover="showEvent('mouseover', 'mouse', this)" onmouseout="showEvent('mouseout', 'mouse', this)">
+    <strong>Eventos del Mouse</strong>
+    <button onclick="showEvent('click', 'mouse', this.parentElement)">Click</button>
+    <button ondblclick="showEvent('dblclick', 'mouse', this.parentElement)">Doble Click</button>
+    <div class="log">Eventos aquí...</div>
+  </div>
+
+
+  <!-- Keyboard Events -->
+  <div class="event-box">
+    <strong>Eventos de Teclado</strong>
+    <input type="text" placeholder="Escribe algo"
+      onkeydown="showEvent('keydown', 'keyboard', this.parentElement)"
+      onkeyup="showEvent('keyup', 'keyboard', this.parentElement)">
+    <div class="log">Eventos aquí...</div>
+  </div>
+
+
+  <!-- Form Events -->
+  <div class="event-box">
+    <strong>Eventos de Formulario</strong>
+    <select onchange="showEvent('change', 'form', this.parentElement)">
+      <option>Seleccione</option>
+      <option>Opción A</option>
+      <option>Opción B</option>
+    </select>
+    <input type="text" placeholder="Entrada en vivo" oninput="showEvent('input', 'form', this.parentElement)">
+    <input type="text" placeholder="Focus / Blur"
+      onfocus="showEvent('focus', 'form', this.parentElement)"
+      onblur="showEvent('blur', 'form', this.parentElement)">
+    <div class="log">Eventos aquí...</div>
+  </div>
+
+
+  <!-- Window Events -->
+  <div class="event-box">
+    <strong>Eventos de Ventana</strong>
+    <button onclick="alert('Ahora intenta redimensionar o hacer scroll')">Probar ventana</button>
+    <div class="log" id="winlog">Eventos aquí...</div>
+  </div>
+
+
+  <!-- Drag & Drop -->
+  <div class="event-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <strong>Drag & Drop</strong>
+    <div draggable="true" ondragstart="drag(event)" id="draggable"
+      style="padding: 10px; background:#dbeafe; border-radius: 6px;">Arrástrame</div>
+    <div class="log">Eventos aquí...</div>
+  </div>
+
+
+</div>
+
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>

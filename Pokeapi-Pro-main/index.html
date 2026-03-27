@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./resources/pokebola.ico">
+  <title>PokeAPI | Trainer Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>POKE API</h1>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Buscar Pokémon por nombre o ID...">
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section id="details" class="details-panel">
+      <div class="placeholder-text">
+        <h2>Selecciona un Pokémon</h2>
+        <p>Haz clic en una tarjeta para ver sus estadísticas completas</p>
+      </div>
+    </section>
+
+    <section id="cards-container" class="cards-grid"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

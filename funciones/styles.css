@@ -1,0 +1,59 @@
+body {
+    font-family: system-ui, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.app {
+    width: 320px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #0f172a;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.resultados {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.aprobado {
+    color: #16a34a;
+}
+
+.reprobado {
+    color: #dc2626;
+}
+
+.total {
+    margin-top: 10px;
+    font-weight: bold;
+}
