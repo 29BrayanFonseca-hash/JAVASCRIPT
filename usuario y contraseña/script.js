@@ -47,10 +47,25 @@ loginForm.addEventListener("submit", (e)=>{
     const usuario = document.getElementById ("usuario").value.trim();
     const password = document.getElementById("password").value.trim();
     if (!usuario || !password){
-        resultado.className = "Error";
+        resultado.className = "error";
         resultado.textContent = "Todos los campos son obligatorios. ";
         estado.textContent = "Por favor completa todos los campos. ";
         return;
     }
+
+    estado.textContent = "verificando credenciales... ";
+
+    Promise.all([
+        validarUsuario(usuario),
+        validarPassword(password)
+    ]).then(([resUsuario,resPass])=>{
+        resultado.className = "success";
+        resultado.textContent = `✅${resUsuario}\n ✅${resPass}`;
+        estado.textContent = "Inicio de sesion exitoso.";
+    }).catch((error)=>{
+        resultado.className = "error";
+        resultado.textContent = `❌${error}`;
+        estado.textContent = "❌ Error! En el inicio de la sesion.";
+    })
 
 })
