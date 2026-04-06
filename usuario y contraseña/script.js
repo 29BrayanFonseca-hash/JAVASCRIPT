@@ -62,10 +62,15 @@ loginForm.addEventListener("submit", (e)=>{
         resultado.className = "success";
         resultado.textContent = `✅${resUsuario}\n ✅${resPass}`;
         estado.textContent = "Inicio de sesion exitoso.";
+
+        setTimeout(()=>{
+            window.location.href = "bienvenida.html";
+        },1000);
     }).catch((error)=>{
         resultado.className = "error";
         resultado.textContent = `❌${error}`;
         estado.textContent = "❌ Error! En el inicio de la sesion.";
+    }).finally (()=>{
+        console.warn("Proceso de autenticacion finalizado");
     })
-
 })
