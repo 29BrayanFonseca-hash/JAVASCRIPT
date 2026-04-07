@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #121212; /* Fondo oscuro para confort visual */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator {
+    width: 320px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+/* Pantalla */
+.display {
+    background-color: #2d2d2d;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.previous-operand {
+    color: #a0a0a0;
+    font-size: 1rem;
+}
+.current-operand {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+/* Grilla de botones */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    height: 60px;
+    font-size: 1.2rem;
+    background-color: #333333;
+    color: white;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn:hover {
+    background-color: #444444;
+}
+.btn:active {
+    transform: scale(0.95);
+}
+/* Estilos especiales */
+.col-2 {
+    grid-column: span 2;
+}
+.operator {
+    background-color: #ff9f0a; /* Estilo naranja clásico */
+    font-weight: bold;
+}
+.operator:hover {
+    background-color: #ffb340;
+}
+.action {
+    background-color: #a5a5a5;
+    color: black;
+}
+.action:hover {
+    background-color: #d4d4d4;
+}
+.equal {
+    background-color: #30d158;
+    font-weight: bold;
+}
+.equal:hover {
+    background-color: #54e37a;
+}
