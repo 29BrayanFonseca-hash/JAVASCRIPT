@@ -100,6 +100,7 @@ function renderTable(usuarios){
         tr.appendChild(tdActions);
 
         tbody.appendChild(tr)
+        
     });
 }
 window.onload = loadUsuarios;
