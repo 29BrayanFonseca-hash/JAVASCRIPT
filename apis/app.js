@@ -99,8 +99,23 @@ function renderTable(usuarios){
         cityStrong.textContent = u.ciudad || "No definida";
 
         const ageSpan = document.createElement("td");
-        ageSpan.style.display = "block"
-    })
-        
+        ageSpan.style.display = "block";
+        ageSpan.style.fontSize = "0.8rem";
+        ageSpan.style.color = "var(--text-muted)";
+        ageSpan.textContent = u.edad ? `${u.edad} años`: "";
+
+        tdLocation.append(cityStrong, ageSpan);
+        tr.append(tdLocation);
     
+        //------------------------BIOGRAFIA---------------------------//
+        const tdBio = document.createElement("td");
+
+        const bioText = u.biografia || "Sin biografia";
+
+        tbBio.textContent = bioText.length > 50 ? bioText.substring(0,50)+"..." : bioText;
+
+        tr.appendChild(tdBio);
+    }); 
 }
+
+window.onload = loadUsuarios;
