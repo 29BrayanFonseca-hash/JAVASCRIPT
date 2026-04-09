@@ -77,7 +77,29 @@ function renderTable(usuarios){
         const img = document.createElement("img");
         img.className = "user-avatar";
 
-        
+        img.src = u.fotoBase64 ? `data:image/png;base64,${u.fotoBase64}` : "https://ui-avatars.com/api/?name="+ encodeURIComponent(u.name)+"&background=random";
+
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "user-info";
+
+        const nameStrong = document.createElement("strong");
+        nameStrong.textContent = u.name;
+
+        const emailSpan = document.createElement("span");
+        emailSpan.textContent = u.email;
+
+        infoDiv.append(nameStrong,emailSpan);
+        tdUser.append(img,infoDiv);
+        tr.appendChild(tdUser);
+
+        //---------------------UBICACION Y EDAD-----------------------//
+
+        const tdLocation = document.createElement("td");
+        const cityStrong = document.createElement("strong");
+        cityStrong.textContent = u.ciudad || "No definida";
+
+        const ageSpan = document.createElement("td");
+        ageSpan.style.display = "block"
     })
         
     
